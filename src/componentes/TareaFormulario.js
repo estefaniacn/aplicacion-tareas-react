@@ -18,8 +18,9 @@ function TareaFormulario(props) {
       texto: input,
       completada: false
     }
-
+    setInput(""); // Limpia el input al agregar la tarea
     props.onSubmit(tareaNueva);
+    
   }
 
   return (
@@ -31,6 +32,7 @@ function TareaFormulario(props) {
         type='text'
         placeholder='Escribe una Tarea'
         name='texto'
+        value={input} // Muestra el valor actual y también mostrará cuando el campo se limpie al agregar la tarea
         onChange={manejarCambio}
       />
       <button className='tarea-boton'>
